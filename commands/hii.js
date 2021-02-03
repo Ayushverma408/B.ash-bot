@@ -2,6 +2,8 @@ module.exports = {
     name: 'hii',
     description: "this is a Hii",
     execute(message, args){
-        message.channel.send('hewoo!');
+        const taggedUser = message.author
+
+        message.channel.send(` ${taggedUser} hewoo!`);
     }
 }
