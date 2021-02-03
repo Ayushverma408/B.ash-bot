@@ -39,8 +39,15 @@ client.on('message', message =>{
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
 
+	//hii command
 	if(command === 'hii'){
 		client.commands.get('hii').execute(message, args);
+		
+	}
+
+	//pomodoro
+	if(command === 'pomodoro'){
+		client.commands.get('pomodoro').execute(message, args);
 		
 	}
 });
