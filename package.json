@@ -9,8 +9,12 @@
   "author": "Ayush",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
-    "eslint": "^7.19.0"
+    "eslint": "^7.19.0",
+    "fetch": "^1.1.0",
+    "node-fetch": "^2.6.1",
+    "query-string": "^6.13.8"
   }
 }

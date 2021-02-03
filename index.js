@@ -1,10 +1,15 @@
 require('dotenv').config();
+
 //Using Client, Bot is a subclass of CLient.
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
+const fetch = require('node-fetch');
+const querystring = require('querystring');
+
 const prefix = '-';
+
 
 client.commands = new Discord.Collection();
 
@@ -38,7 +43,7 @@ client.once('ready', () => {
 
 //			Prefix args and command 
 
-client.on('message', message =>{
+client.on('message', async message =>{
 
 	if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -56,6 +61,29 @@ client.on('message', message =>{
 		client.commands.get('pomodoro').execute(message, args);
 		
 	}
+
+
+	//urban dictionary
+	else if (command === 'urban') {
+		if (!args.length) {
+			return message.channel.send('You need to supply a search term!');
+		}
+
+		const query = querystring.stringify({ term: args.join(' ') });
+
+		const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${query}`).then(response => response.json());
+
+		if (!list.length) {
+			return message.channel.send(`No results found for **${args.join(' ')}**.`);
+		}
+
+		const [answer] = list;
+
+        message.channel.send(answer.definition)
+	}
+	//urban disctionary end
+
+
 });
 
 // END OF Index.js
