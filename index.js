@@ -8,6 +8,9 @@ const prefix = '-';
 
 client.commands = new Discord.Collection();
 
+
+//Reading Files
+
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
 	const command = require(`./commands/${file}`);
@@ -31,6 +34,9 @@ client.once('ready', () => {
 
 
 //Client.on is Inititated here
+
+
+//			Prefix args and command 
 
 client.on('message', message =>{
 
