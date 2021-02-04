@@ -18,6 +18,9 @@ module.exports = {
         else if(message.author.id == parseInt(process.env.FIVE)) {
             message.channel.send(process.env.FIVEHII)
         }
+        else if(message.author.id == parseInt(process.env.SIX)) {
+            message.channel.send(process.env.SIXHII)
+        }
         else{
         message.channel.send(`${message.author} hewoo!`);
         }
