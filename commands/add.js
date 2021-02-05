@@ -6,7 +6,7 @@ module.exports = {
 
         //Declaring random values to variable
         let x = Math.floor((Math.random() * 70) + 1);
-        let y = Math.floor((Math.random() * 50) + 1);
+        let y = Math.floor((Math.random() * 70) + 1);
         message.channel.send('add the no. ' + x.toString() + " and " + y.toString())
         let sum = x + y;
         

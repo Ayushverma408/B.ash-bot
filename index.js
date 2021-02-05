@@ -32,13 +32,7 @@ const applyText = (canvas, text) => {
 	return ctx.font;
 };
 
-
-
 //end of font settings
-
-
-
-
 
 
 //Reading Files
@@ -119,14 +113,19 @@ client.on('message', async message =>{
 		client.commands.get('pomodoro').execute(message, args);
 		
 	}
-
+	//notebook
 	if(command === 'notebook'){
 		client.commands.get('notebook').execute(message, args);
 		
 	}
-	
+	//urban
 	if(command === 'urban'){
 		client.commands.get('urban').execute(message, args);
+		
+	}
+	//add
+	if(command === 'add'){
+		client.commands.get('add').execute(message, args);
 		
 	}
 
