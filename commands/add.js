@@ -10,7 +10,7 @@ module.exports = {
         message.channel.send('add the no. ' + x.toString() + " and " + y.toString())
         let sum = x + y;
         
-        const filter = m => !m.author.bot;
+        const filter = m => !m.message.author;
         const collector = message.channel.createMessageCollector(filter, { time: 12000 });
 
         collector.on('collect', m => {
