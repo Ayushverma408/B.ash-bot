@@ -48,11 +48,11 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
 	console.log('Ready!');
-	client.user.setStatus('Available')
+	client.user.setStatus('online')
 	client.user.setPresence({
 		status: 'online',
 		activity: {
-			name: 'KALM',
+			name: 'Deleting Ego.exe',
 			type: 'PLAYING'
 					}
 		})
@@ -126,6 +126,11 @@ client.on('message', async message =>{
 	//add
 	if(command === 'add'){
 		client.commands.get('add').execute(message, args);
+		
+	}
+	//schedule send
+	if(command === 'schedule'){
+		client.commands.get('schedule').execute(message, args);
 		
 	}
 

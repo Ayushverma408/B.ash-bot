@@ -20,11 +20,11 @@ module.exports = {
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
 	// Select the font size and type from one of the natively available fonts
-	ctx.font = '22px sans-serif';
+	ctx.font = '20px sans-serif';
 	// Select the style that will be used to fill the text in
 	ctx.fillStyle = '#202020';
 	// Actually fill the text with a solid color
-	ctx.fillText(`${args.join(" ")}`, canvas.width / 12, canvas.height /2.15);
+	ctx.fillText(`${args.join(" ")}`, canvas.width / 11.7, canvas.height /2.15);
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'letter.png');
 
