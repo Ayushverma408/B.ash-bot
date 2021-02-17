@@ -16,4 +16,4 @@ module.exports = {
 }
 
 /* Input syntax: -schedule Text Goes Here even line breaks are 
-maintained well only the last element should be an integer which will be in minutes for custom time 10
+maintained well only the last element should be an integer which will be in minutes for custom time 10*/
