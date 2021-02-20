@@ -1,3 +1,5 @@
+const { MessageEmbed, Channel } = require("discord.js");
+
 module.exports = {
     name: 'schedule',
     description: "Send the message only when the time is right",
@@ -9,9 +11,13 @@ module.exports = {
         let time = str.split(/[, ]+/).pop();
         function myFunc(arg) {
             console.log(`arg was => ${arg}`);
-            message.channel.send(`from ${message.author}: \n${args.join(" ")}`);
+            //message.channel.send(`from ${message.author}: \n${args.join(" ")}`);
+            const embed = new MessageEmbed()
+            .setDescription(args.join(" "))
+            .setAuthor(message.author.tag, message.author.displayAvatarURL())
+            message.channel.send(embed)
           }
-          setTimeout(myFunc, 1000*time*60, 'finished'); 
+          setTimeout(myFunc, 1000*time, 'finished'); 
 }
 }
 

@@ -52,7 +52,7 @@ client.once('ready', () => {
 	client.user.setPresence({
 		status: 'online',
 		activity: {
-			name: 'Deleting Ego.exe',
+			name: 'with Database',
 			type: 'PLAYING'
 					}
 		})
