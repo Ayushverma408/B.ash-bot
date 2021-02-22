@@ -8,7 +8,10 @@ module.exports = {
     const client = new Discord.Client();
     const canvas = Canvas.createCanvas(530, 500);
     const ctx = canvas.getContext('2d');
-    
+
+	//Deletes d command message
+	message.delete()
+
 
 	// Since the image takes time to load, you should await it
 	const background = await Canvas.loadImage('./notebook.jpg');
