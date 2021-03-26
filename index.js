@@ -52,7 +52,7 @@ client.once('ready', () => {
 	client.user.setPresence({
 		status: 'online',
 		activity: {
-			name: 'waiting',
+			name: '.exe',
 			type: 'PLAYING'
 					}
 		})
@@ -105,6 +105,12 @@ client.on('message', async message =>{
 	//hii command
 	if(command === 'hii'){
 		client.commands.get('hii').execute(message, args);
+		
+	}
+
+	//avatar
+	if(command === 'avatar'){
+		client.commands.get('avatar').execute(message, args);
 		
 	}
 
