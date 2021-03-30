@@ -52,7 +52,7 @@ client.once('ready', () => {
 	client.user.setPresence({
 		status: 'online',
 		activity: {
-			name: '.exe',
+			name: 'with mudae',
 			type: 'PLAYING'
 					}
 		})
@@ -138,6 +138,14 @@ client.on('message', async message =>{
 	if(command === 'schedule'){
 		client.commands.get('schedule').execute(message, args);
 		
+	}
+	//nico nico nii <3
+	if(command === 'niconiconii'){
+		message.channel.send("https://tenor.com/view/nico-nico-nii-gif-19262246");
+	}
+
+	if(command === 'dab'){
+		message.channel.send("https://tenor.com/view/senzawa-dab-anime-gif-14393186");
 	}
 
 });
