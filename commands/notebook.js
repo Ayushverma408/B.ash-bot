@@ -13,6 +13,8 @@ module.exports = {
 	message.delete()
 
 
+	let msg = await message.channel.send("Skribling words coming from your heart <3...");
+
 	// Since the image takes time to load, you should await it
 	const background = await Canvas.loadImage('./notebook.jpg');
 	// This uses the canvas dimensions to stretch the image onto the entire canvas
@@ -32,6 +34,8 @@ module.exports = {
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'letter.png');
 
 	message.channel.send(attachment);
+
+	msg.delete();
 		
 	}
 
