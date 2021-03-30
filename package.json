@@ -16,6 +16,7 @@
     "eslint": "^7.19.0",
     "fetch": "^1.1.0",
     "node-fetch": "^2.6.1",
-    "query-string": "^6.13.8"
+    "query-string": "^6.13.8",
+    "urban-dictionary": "^3.0.0"
   }
 }
