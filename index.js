@@ -151,4 +151,4 @@ client.on('message', async message =>{
 });
 
 // END OF Index.js
-client.login(process.env.TOKEN);
+client.login(process.env.token);
