@@ -135,6 +135,7 @@ client.on('message', async message =>{
 	//urban
 	if(command === 'urban'){
 		client.commands.get('urban').execute(message, args);
+		message.delete()
 		
 	}
 	//add
