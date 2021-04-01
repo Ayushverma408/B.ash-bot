@@ -18,6 +18,15 @@ module.exports = {
 
 		const [answer] = list;
 
-        message.channel.send(answer.definition)
+		const embed = new MessageEmbed()
+     .setTitle(`${args.join(' ')}`)
+     .setColor(5814783)
+     .setTimestamp()
+     .setThumbnail('')
+     .addFields(
+     { name: 'meaning', value: `${answer.definition}`},
+     )
+	message.channel.send(embed)
+       // message.channel.send(answer.definition)
 	}
 }
