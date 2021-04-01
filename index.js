@@ -108,6 +108,13 @@ client.on('message', async message =>{
 		
 	}
 
+	//help command
+	if(command === 'help'){
+		client.commands.get('help').execute(message, args);
+		
+	}
+
+
 	//avatar
 	if(command === 'avatar'){
 		client.commands.get('avatar').execute(message, args);
