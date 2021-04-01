@@ -1,3 +1,5 @@
+const { Message, MessageEmbed } = require('discord.js');
+
 module.exports = {
     name: 'urban',
     description: "This command lets u to quickly search anything from urban dictionary right from discord",
