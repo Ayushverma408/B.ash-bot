@@ -128,6 +128,8 @@ client.on('message', async message =>{
 	//notebook
 	if(command === 'notebook'){
 		client.commands.get('notebook').execute(message, args);
+		message.delete()
+
 		
 	}
 	//urban
@@ -147,10 +149,12 @@ client.on('message', async message =>{
 	}
 	//nico nico nii <3
 	if(command === 'niconiconii'){
+		message.delete()
 		message.channel.send("https://tenor.com/view/nico-nico-nii-gif-19262246");
 	}
 	//senzawa dabs owo
 	if(command === 'dab'){
+		message.delete()
 		message.channel.send("https://tenor.com/view/senzawa-dab-anime-gif-14393186");
 	}
 
