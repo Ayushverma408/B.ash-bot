@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args){
 
         message.reply("please check your dms for the commands!");
-        message.author.send({embed: {
+        message.channel.send({embed: {
               color: 1339135,
               thumbnail: {
                   url: (message.author.displayAvatarURL)
