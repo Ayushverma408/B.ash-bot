@@ -1,36 +1,24 @@
-module.exports.run = async(message ) => {
-    fs.readdir("./commands/", (err, files) => {
-        if(err) console.error(err);
-
-        let jsfiles = files.filter(f => f.split(".").pop() === "js");
-        if(jsfiles.length <= 0) {
-            console.log("No commands to load!");
-            return;
-        }
-
-
-        let result = jsfiles.forEach((f, i) => {
-            let props = require(`./${f}`);
-            let filesArray = [props.help.name, props.help.description]
-            //let filesArray = [props.help.name, props.help.description, props.help.usage]
-            message.author.send(`**${filesArray[0]}** \n${filesArray[1]}`);
-            //message.author.send(`**${filesArray[0]}** \n${filesArray[1]} \n${filesArray[2]}`);
-        });
-
-    });
-}
+const { Message, MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'help',
-    description: "brrrrrrrrb",
+    description: "list commands",
     async execute(message, args){
 
-        message.channel.send(` ${message.author} Pomodoro started for ${args} min! \n Go work now :3`);
-        message.react('🍅');
-        function myFunc(arg) {
-            console.log(`arg was => ${arg}`);
-            message.channel.send(`${message.author} Pomodoro finished \nHave some rest now :>`);
-          }
-          setTimeout(myFunc, 1000*args*60, 'finished'); 
+    const embed = new MessageEmbed()
+     .setTitle(`B.ash Commands list`)
+     .setColor(5814783)
+     .setTimestamp()
+     .setThumbnail('')
+     .addFields(
+     { name: 'avatar', value: `-avatar`},
+     { name: 'schedule', value: `-schedule <text> <time in min>` },
+     { name: 'notebook', value: `-notebook <text>` },
+     { name: 'pomodoro', value: `-pomodoro <text> <time in min>` },
+     { name: 'urban', value: `-urban <word>`},
+     { name: 'add', value: `-add`},
+     )
+message.channel.send(embed)
+
 }
 }
