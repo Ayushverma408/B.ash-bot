@@ -136,8 +136,15 @@ client.on('message', async message =>{
 	if(command === 'urban'){
 		client.commands.get('urban').execute(message, args);
 		message.delete()
-		
+
+	
 	}
+	//snipe
+	if(command === 'snipe'){
+		client.commands.get('snipe').execute(message, args);
+		message.delete()
+
+	}	
 	//add
 	if(command === 'add'){
 		client.commands.get('add').execute(message, args);
