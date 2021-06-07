@@ -52,7 +52,7 @@ client.once('ready', () => {
 	client.user.setPresence({
 		status: 'online',
 		activity: {
-			name: 'Silence is LUXURIOUS.',
+			name: 'Construction in progress!',
 			type: 'PLAYING'
 					}
 		})
@@ -139,17 +139,18 @@ client.on('message', async message =>{
 
 	
 	}
-	//snipe
+	/*snipe
 	if(command === 'snipe'){
 		client.commands.get('snipe').execute(message, args);
 		message.delete()
+	
+	}*/
 
-	}	
-	//add
+	/*add
 	if(command === 'add'){
 		client.commands.get('add').execute(message, args);
 		
-	}
+	}*/
 	//schedule send
 	if(command === 'schedule'){
 		client.commands.get('schedule').execute(message, args);
