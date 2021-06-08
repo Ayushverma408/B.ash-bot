@@ -156,6 +156,13 @@ client.on('message', async message =>{
 		client.commands.get('schedule').execute(message, args);
 		
 	}
+	//bulkdelete
+	if(command === 'bulkdelete'){
+		client.commands.get('bulkdelete').execute(message, args);
+		
+	}
+
+
 	//nico nico nii <3
 	if(command === 'niconiconii'){
 		message.delete()
@@ -170,5 +177,5 @@ client.on('message', async message =>{
 });
 
 // END OF Index.js
-client.login(process.env.token);
-//client.login(process.env.TOKEN);
+//client.login(process.env.token);
+client.login(process.env.TOKEN);
