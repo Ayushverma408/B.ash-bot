@@ -52,7 +52,7 @@ client.once('ready', () => {
 	client.user.setPresence({
 		status: 'online',
 		activity: {
-			name: 'NOFKYOLOGY',
+			name: 'switching from client client to bot client tommorow, surviving odds are not very sweet',
 			type: 'PLAYING'
 					}
 		})
