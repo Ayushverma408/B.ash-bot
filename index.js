@@ -4,7 +4,10 @@ require('dotenv').config();
 
 const Discord = require('discord.js');
 const Canvas = require('canvas');
-const client = new Discord.Client();
+
+//const client = new Discord.Client();
+const bot = new Discord.Client();
+
 const fs = require('fs');
 const fetch = require('node-fetch');
 const querystring = require('querystring');
@@ -12,7 +15,8 @@ const querystring = require('querystring');
 const prefix = '-';
 
 
-client.commands = new Discord.Collection();
+//client.commands = new Discord.Collection();
+bot.commands = new Discord.Collection();
 
 //Font setting
 
@@ -41,18 +45,22 @@ const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith(
 for(const file of commandFiles){
 	const command = require(`./commands/${file}`);
 
-	client.commands.set(command.name, command);
+	//client.commands.set(command.name, command);
+	bot.commands.set(command.name, command);
 }
 
 // Setting up status presence and logging ready when on.
 
-client.once('ready', () => {
+//client.once('ready', () => {
+	bot.once('ready', () => {
 	console.log('Ready!');
-	client.user.setStatus('online')
-	client.user.setPresence({
+	//client.user.setStatus('online')
+	bot.user.setStatus('online')
+	//client.user.setPresence({
+	bot.user.setPresence({
 		status: 'online',
 		activity: {
-			name: 'switching from client client to bot client tommorow, surviving odds are not very sweet',
+			name: 'a good day',
 			type: 'PLAYING'
 					}
 		})
@@ -61,7 +69,7 @@ client.once('ready', () => {
 
 //Client.on is Inititated here
 // Welcome message
-client.on('guildMemberAdd',async member => {
+bot.on('guildMemberAdd',async member => {
 	const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
 	if (!channel) return;
 
@@ -90,7 +98,8 @@ client.on('guildMemberAdd',async member => {
 
 //			Prefix args and command 
 
-client.on('message', async message =>{
+//client.on('message', async message =>{
+	bot.on('message', async message =>{
 
 	if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -99,52 +108,58 @@ client.on('message', async message =>{
 
 	//fake welcomee
 	if (command === 'join') {
-		client.emit('guildMemberAdd', message.member);
+		//client.emit('guildMemberAdd', message.member);
+		bot.emit('guildMemberAdd', message.member);
 	}
 
 	//hii command
 	if(command === 'hii'){
-		client.commands.get('hii').execute(message, args);
+		//client.commands.get('hii').execute(message, args);
+		bot.commands.get('hii').execute(message, args);
 		
 	}
 
 	//help command
 	if(command === 'help'){
-		client.commands.get('help').execute(message, args);
-		
+		//client.commands.get('help').execute(message, args);
+		bot.commands.get('help').execute(message, args);
 	}
 
 	//avatar
 	if(command === 'avatar'){
-		client.commands.get('avatar').execute(message, args);
+		//client.commands.get('avatar').execute(message, args);
+		bot.commands.get('avatar').execute(message, args);
 		
 	}
 
 	//pomodoro
 	if(command === 'pomodoro'){
-		client.commands.get('pomodoro').execute(message, args);
+		//client.commands.get('pomodoro').execute(message, args);
+		bot.commands.get('pomodoro').execute(message, args);
 		
 	}
 	//notebook
 	if(command === 'notebook'){
-		client.commands.get('notebook').execute(message, args);
+		//client.commands.get('notebook').execute(message, args);
+		bot.commands.get('notebook').execute(message, args);
 		message.delete()
 
 		
 	}
 	//urban
 	if(command === 'urban'){
-		client.commands.get('urban').execute(message, args);
+		//client.commands.get('urban').execute(message, args);
+		bot.commands.get('urban').execute(message, args);
 		message.delete()
 
 	
 	}
-	/*snipe
+	
 	if(command === 'snipe'){
-		client.commands.get('snipe').execute(message, args);
+		bot.commands.get('snipe').execute(bot, message, args);
 		message.delete()
 	
-	}*/
+	}
 
 	/*add
 	if(command === 'add'){
@@ -153,13 +168,14 @@ client.on('message', async message =>{
 	}*/
 	//schedule send
 	if(command === 'schedule'){
-		client.commands.get('schedule').execute(message, args);
+		//client.commands.get('schedule').execute(message, args);
+		bot.commands.get('schedule').execute(message, args);
 		
 	}
 	//bulkdelete
 	if(command === 'bulkdelete'){
-		client.commands.get('bulkdelete').execute(message, args);
-		
+		//client.commands.get('bulkdelete').execute(message, args);
+		bot.commands.get('bulkdelete').execute(message, args);
 	}
 
 
@@ -177,5 +193,7 @@ client.on('message', async message =>{
 });
 
 // END OF Index.js
-client.login(process.env.token);
+//client.login(process.env.token);
 //client.login(process.env.TOKEN);
+//bot.login(process.env.TOKEN);
+bot.login(process.env.token);
