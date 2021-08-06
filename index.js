@@ -60,7 +60,7 @@ for(const file of commandFiles){
 	bot.user.setPresence({
 		status: 'online',
 		activity: {
-			name: 'eyeing NOTHING ear 1',
+			name: '|',
 			type: 'PLAYING'
 					}
 		})
