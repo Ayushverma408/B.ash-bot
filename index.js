@@ -178,6 +178,12 @@ bot.on('guildMemberAdd',async member => {
 		bot.commands.get('bulkdelete').execute(message, args);
 	}
 
+	//king role
+	if(command === 'myrole'){
+		//client.commands.get('bulkdelete').execute(message, args);
+		bot.commands.get('myrole').execute(message, args);
+	}
+
 
 	//nico nico nii <3
 	if(command === 'niconiconii'){
