@@ -69,7 +69,7 @@ for(const file of commandFiles){
 
 //Client.on is Inititated here
 // Welcome message
-bot.on('guildMemberAdd',async member => {
+/*bot.on('guildMemberAdd',async member => {
 	const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
 	if (!channel) return;
 
@@ -94,7 +94,7 @@ bot.on('guildMemberAdd',async member => {
 	channel.send(`Welcome to the server, ${member}! \nWe are totally not creepy AT ALL >.<`, attachment);
 });
 //
-
+*/
 
 //			Prefix args and command 
 
